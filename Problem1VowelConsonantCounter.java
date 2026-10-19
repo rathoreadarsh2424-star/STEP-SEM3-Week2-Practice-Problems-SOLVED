@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Problem1VowelConsonantCounter {
+    static void countVowelsAndConsonants(String text) {
+        int vowels = 0, consonants = 0;
+        for (int i = 0; i < text.length(); i++) {
+            char ch = Character.toLowerCase(text.charAt(i));
+            if (ch == ' ') continue;
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+        System.out.printf("Vowels: %d | Consonants: %d%n", vowels, consonants);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter title: ");
+        countVowelsAndConsonants(sc.nextLine());
+        sc.close();
+    }
+}
